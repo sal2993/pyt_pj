@@ -22,13 +22,26 @@ def main():
     prob_solutes.append(prob_sol)
   
   rand = random.randint(0,100)
+  live = 0
+  escape = False
 
-  equal = input("problem: " + str(prob_solutes[rand]))
+  while not escape and live < 3:
+    equal = input("problem: " + str(prob_solutes[rand][0]) + " + " \
+      + str(prob_solutes[rand][1] + " = "))
+    print 'your ans   ', equal
+    print 'your lives:', live
+    if equal == int(prob_solutes[rand][2]):
+      escape = True
+    live += 1
   
-  
+  if live == 3:
+    print 'sorry the corrent answer was', prob_solutes[rand][2]
+  else:
+    print 'good job on the correct answer!! (answer: )', prob_solutes[rand][2]
   
 
   f.close()
+  sys.exit(0)
 
 if __name__ == '__main__':
   main()
