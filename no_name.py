@@ -8,7 +8,7 @@ import time
 def main():
   # Open the file with the problems to read
   try:
-    f = open('problems.txt', 'rU')
+    f = open('mathproblems.txt', 'rU')
   except IOError:
     sys.stderr.write('problem occured!!! sc')
 
@@ -26,7 +26,7 @@ def main():
   escape = False
 
   while not escape and live < 3:
-    equal = input("problem: " + str(prob_solutes[rand][0]) + " + " \
+    equal = input("problem: " + str(prob_solutes[rand][0]) + " x " \
       + str(prob_solutes[rand][1] + " = "))
     print 'your ans   ', equal
     print 'your lives:', live
@@ -37,7 +37,7 @@ def main():
   if live == 3:
     print 'sorry the corrent answer was', prob_solutes[rand][2]
   else:
-    print 'good job on the correct answer!! (answer: )', prob_solutes[rand][2]
+    print 'good job on the correct answer!! answer: ', prob_solutes[rand][2]
   
 
   f.close()
